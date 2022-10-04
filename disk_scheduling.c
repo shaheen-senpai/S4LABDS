@@ -110,7 +110,7 @@ do{
         case 4:
             copy(arr,arrcpy,n);
             Sort(arrcpy,n);
-            printf("Seektime is %d\n",scan(arrcpy,headpos,n,prev<head,199,1));
+            printf("Seektime is %d\n",scan(arrcpy,headpos,n,prev<head,199,1));   // 199 is the last sector of the disk
             break;
         case 5:
             copy(arr,arrcpy,n);
