@@ -9,12 +9,12 @@ int checkFault(int fsize, int need, int f[100]){
     for(int i = 0; i < fsize; i++){
         if(f[i] == -1){
             f[i] = need;
-            return 2;
+            return 2;    //empty frame
         }
         if(need == f[i])
-            return 0;
+            return 0;    //already present
     }
-    return 1;
+    return 1;            //replacement needed
 }
 
 
