@@ -64,12 +64,12 @@ void sstf(int arr[],int n){
 }
 
 int scan(int arr[],int headpos,int n,int right,int end,int c){
-    if(headpos==0 || headpos==1)return diff(arr[n-1],arr[0]);
+    if(headpos==0)return diff(arr[n-1],arr[0]);
     if(right)return c?(end-arr[headpos]+end+arr[headpos-1]):(end-arr[headpos]+end-arr[0]);
     else return c?(arr[headpos]+end+end-arr[headpos+1]):(arr[headpos]+arr[n-1]);
 }
 int look(int arr[],int headpos,int n,int right,int end,int c){
-    if(headpos==0 || headpos==1)return diff(arr[n-1],arr[0]);
+    if(headpos==0)return diff(arr[n-1],arr[0]);
     if(right)return c?(arr[n-1]-arr[headpos] + arr[n-1]-arr[0] + arr[headpos-1]-arr[0]):(arr[n-1]-arr[headpos] + arr[n-1]-arr[0]);
     else return c?(arr[headpos]-arr[0] + arr[n-1]-arr[0] + arr[n-1]-arr[headpos+1]):(arr[headpos]-arr[0] + arr[n-1]-arr[0]);
 }
