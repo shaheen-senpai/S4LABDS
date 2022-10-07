@@ -96,21 +96,24 @@ int Linked(struct memory memory[],int msize,struct file file){
 	if(memory[file.start].taken){
 		return 0;
 	}
+	else{memory[file.start].taken=1;}
 	int curr=file.start;
 	int next;
+	int fill=file.size-1;
 	for(int i=0;i<file.size-1;i++){
-		for(int i=0;i<102;i++){			
-			next=i;	
-			if(i==101){
+		for(int j=0;j<102;j++){			
+			next=j;	
+			if(j==101){
 				printf("No sufficient space in memory !!");
 				return 0;
 			}
 			if(memory[next].taken)
 				continue;
 			else{
-				memory[curr].taken=1;
 				memory[curr].next=next;
 				curr=next;
+				memory[curr].taken=1;
+				fill--;
 				break;
 			}
 		}		
